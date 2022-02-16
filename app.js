@@ -16,10 +16,11 @@ app.use(cors());
 
 mongoose.connect(process.env.URI, ()=>{
     console.log("connecting to db...")
+    app.listen(process.env.PORT, ()=>{
+        console.log("server running...")
+    });
 })
 
-app.listen(port, ()=>{
-    console.log("server running...")
-});
+
 
 app.use('/', router)
